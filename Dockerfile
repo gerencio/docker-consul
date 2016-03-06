@@ -6,7 +6,6 @@ RUN apk --update add curl bash ca-certificates && \
 
 ADD https://releases.hashicorp.com/consul/0.5.0/consul_0.5.0_linux_amd64.zip /tmp/consul.zip
 RUN cd /bin && unzip /tmp/consul.zip && chmod +x /bin/consul && rm /tmp/consul.zip
-
 ADD https://releases.hashicorp.com/consul/0.5.0/consul_0.5.0_web_ui.zip /tmp/webui.zip
 RUN mkdir /ui && cd /ui && unzip /tmp/webui.zip && rm /tmp/webui.zip && mv dist/* . && rm -rf dist
 
